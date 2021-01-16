@@ -9,6 +9,7 @@ In the design, there is login operation where the user first should insert its d
 * [Outputs](#outputs)
 * [ASM Chart](#asm-chart)
 * [Operation Steps](#operation-steps)
+* [Modules](#modules)
 * [License](#license)
 
 ## Inputs
@@ -51,6 +52,17 @@ If the user presses BTN2 in the ATM menu state, the circuitry goes to a state wh
 If the user presses BTN1 in the ATM menu state, the user gets logged out and the circuitry goes to the IDLE state.
 
 Unless the user resets the circuitry, the user’s current balance and password should not be reset. For example, the user enters the system, changes the password, deposit money into the account, and log out from the ATM. If the user wants to re-enter the ATM, he/she should use the new password (and the user’s account balance should be equal to the amount of money deposited.).
+
+## Modules
+
+* **The clock divider module** (clk_divider.v) generates a clock signal with a period of 50 ms, from a 25 MHz input clock (Please note that the BASYS boards can provide 3 different clock frequency: 25 MHz, 50 MHz, 100 MHz. These are set using the jumpers on the BASYS boards. We set the clock of all BASYS boards to 25 MHz.). 
+
+* **The debouncer** (debouncer.v) circuit gets the input from a push button and generates a one clock pulse output.
+
+*	**The seven segment driver** (ssd.v) module, drives the segments.
+
+* **The Top module** (top_module.v) binds the clock divider, the debouncer and the seven segment driver modules.
+
 
 ## License
 [MIT](./LICENSE)
