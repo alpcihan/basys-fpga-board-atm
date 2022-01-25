@@ -1,4 +1,4 @@
-# CS303-Logic-Digital-System-Design
+# BASYS FPGA Board ATM
 
 Design and the implementation of a simple ATM (Automated Teller Machine) on the BASYS FPGA board.
 
